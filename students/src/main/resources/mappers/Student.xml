@@ -5,15 +5,15 @@
 
     <mapper namespace="com.fh.dao.StudentDao">
 
-    <select id="querycount" parameterType="com.fh.entity.vo.Paramss" resultType="int">
+    <select id="querycount" parameterType="com.zjm.students.entity.vo.Paramss" resultType="int">
         select count(*) from  st_student
     </select>
 
-    <select id="querystudent" parameterType="com.fh.entity.vo.Paramss" resultType="com.fh.entity.po.Student">
+    <select id="querystudent" parameterType="com.zjm.students.entity.vo.Paramss" resultType="com.zjm.students.entity.po.Student">
         select * from st_student limit ${size *(start-1)} ,#{size}
     </select>
 
-    <insert id="insertstudent" parameterType="com.fh.entity.po.Student">
+    <insert id="insertstudent" parameterType="com.zjm.students.entity.po.Student">
         insert into st_student (name,sex,birthday,score,hobby)
         value
         (#{name},#{sex},#{birthday},#{score},#{hobby})
@@ -23,11 +23,11 @@
         delete  from st_student where id=#{id}
     </delete>
 
-    <select id="selectstudentById" parameterType="int" resultType="com.fh.entity.po.Student">
+    <select id="selectstudentById" parameterType="int" resultType="com.zjm.students.entity.po.Student">
         select * from st_student where id=#{id}
     </select>
 
-    <update id="updatestudent" parameterType="com.fh.entity.po.Student">
+    <update id="updatestudent" parameterType="com.zjm.students.entity.po.Student">
         update  st_student set name=#{name},sex=#{sex},birthday=#{birthday},score=#{score},hobby=#{hobby} where id=#{id}
     </update>
     </mapper>
