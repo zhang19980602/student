@@ -27,7 +27,7 @@ public interface UserDao {
     void delUser(Integer id);
     @Select("select * from z_user where name =#{name}")
     User queryUserByname(String name);
-    @Insert("insert into t_user " +
+    @Insert("insert into z_user " +
             "(name,password,createDate)" +
             "value" +
             "(#{name},#{password},#{createDate})")
